@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:kelompokmbl/screen/navbarscreen.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
@@ -20,9 +21,8 @@ class WelcomeScreen extends StatelessWidget {
               alignment: Alignment.centerRight,
               child: TextButton(
                 onPressed: () {
-                  // Navigator.push(context, MaterialPageRoute(
-                  //   builder: (context) =>
-                  // ));
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => NavbarScreen()));
                 },
                 child: Text(
                   'SKIP',

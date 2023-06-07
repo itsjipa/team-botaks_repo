@@ -9,7 +9,7 @@ class NavbarScreen extends StatefulWidget {
 }
 
 class _NavbarScreenState extends State<NavbarScreen> {
-  int _selectedIndex = 0;
+  int _selectedIndex = 1;
   final _screens = [
     // Homescreen
     HomeScreen(),
