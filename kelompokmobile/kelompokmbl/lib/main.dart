@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:kelompokmbl/provider/homescreen_provider.dart';
 import 'package:kelompokmbl/screen/welcomescreen.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(const MyApp());
@@ -7,13 +9,17 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: const WelcomeScreen(),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => HomeScreenProvider()),
+      ],
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: const WelcomeScreen(),
+      ),
     );
   }
 }
