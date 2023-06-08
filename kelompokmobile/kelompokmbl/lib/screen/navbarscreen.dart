@@ -11,15 +11,11 @@ class NavbarScreen extends StatefulWidget {
 class _NavbarScreenState extends State<NavbarScreen> {
   int _selectedIndex = 1;
   final _screens = [
+    // Message
+    Container(),
     // Homescreen
     HomeScreen(),
-    // CodePromo
-    Container(),
-    // Listappointment
-    Container(),
-    // step1
-    Container(),
-    // step2
+    // Profile
     Container(),
   ];
 
