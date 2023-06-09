@@ -62,7 +62,8 @@ class HomeScreen extends StatelessWidget {
                             'Kenneth Aiden',
                             style: GoogleFonts.rubik(
                                 color: Colors.black,
-                                fontWeight: FontWeight.bold),
+                                fontWeight: FontWeight.bold,
+                                letterSpacing: 3),
                           ),
                         ],
                       ),
@@ -121,7 +122,7 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
               Container(
-                height: MediaQuery.of(context).size.height,
+                height: 440,
                 width: MediaQuery.of(context).size.width,
                 child: Container(
                   decoration: BoxDecoration(
@@ -135,17 +136,294 @@ class HomeScreen extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Container(
-                        margin: EdgeInsets.only(left: 20.0, top: 30.0),
+                        margin: EdgeInsets.only(left: 20.0, top: 20.0),
                         child: Text(
                           'Booking and List',
                           style: GoogleFonts.kanit(
                               fontWeight: FontWeight.w400, fontSize: 18),
                         ),
                       ),
-                      Container(
-
-                          // width: ,
-                          )
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          InkWell(
+                            onTap: () {},
+                            child: Column(
+                              // crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Container(
+                                  width: 124,
+                                  height: 113,
+                                  decoration: BoxDecoration(
+                                    boxShadow: [
+                                      BoxShadow(
+                                        color: Colors.black12,
+                                        blurRadius: 6,
+                                        spreadRadius: 4,
+                                      ),
+                                    ],
+                                  ),
+                                  child: Container(
+                                    // margin: EdgeInsets.all(5.0),
+                                    child: Image.asset('assets/img5.jpeg'),
+                                  ),
+                                ),
+                                Container(
+                                  width: 124,
+                                  height: 50,
+                                  decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    shape: BoxShape.rectangle,
+                                    borderRadius: BorderRadius.only(
+                                      bottomLeft: Radius.circular(10),
+                                      bottomRight: Radius.circular(10),
+                                    ),
+                                  ),
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Container(
+                                        margin:
+                                            EdgeInsets.only(left: 8, top: 8),
+                                        child: Text(
+                                          'Book Appointment',
+                                          style: GoogleFonts.quicksand(
+                                              fontSize: 11,
+                                              fontWeight: FontWeight.w600),
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        height: 5,
+                                      ),
+                                      Container(
+                                        margin: EdgeInsets.only(left: 8),
+                                        child: Text(
+                                          'free for first consultation',
+                                          style: GoogleFonts.quicksand(
+                                              fontSize: 8,
+                                              color: Colors.blueGrey.shade800,
+                                              fontWeight: FontWeight.w500),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          InkWell(
+                            onTap: () {},
+                            child: Column(
+                              // crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Container(
+                                  width: 124,
+                                  height: 113,
+                                  decoration: BoxDecoration(
+                                    boxShadow: [
+                                      BoxShadow(
+                                        color: Colors.black12,
+                                        blurRadius: 6,
+                                        spreadRadius: 4,
+                                      ),
+                                    ],
+                                  ),
+                                  child: Container(
+                                    // margin: EdgeInsets.all(5.0),
+                                    child: Image.asset('assets/img6.jpeg'),
+                                  ),
+                                ),
+                                Container(
+                                  width: 124,
+                                  height: 50,
+                                  decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    shape: BoxShape.rectangle,
+                                    borderRadius: BorderRadius.only(
+                                      bottomLeft: Radius.circular(10),
+                                      bottomRight: Radius.circular(10),
+                                    ),
+                                  ),
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Container(
+                                        margin:
+                                            EdgeInsets.only(left: 8, top: 8),
+                                        child: Text(
+                                          'Your Appointment',
+                                          style: GoogleFonts.quicksand(
+                                              fontSize: 11,
+                                              fontWeight: FontWeight.w600),
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        height: 5,
+                                      ),
+                                      Container(
+                                        margin: EdgeInsets.only(left: 8),
+                                        child: Text(
+                                          'List your appointment',
+                                          style: GoogleFonts.quicksand(
+                                              fontSize: 8,
+                                              color: Colors.blueGrey.shade800,
+                                              fontWeight: FontWeight.w500),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        height: 15,
+                      ),
+                      Align(
+                        alignment: FractionalOffset.center,
+                        child: Container(
+                          // padding: EdgeInsets.only(left: 20, right: 20),
+                          width: 281,
+                          height: 60,
+                          color: Colors.white,
+                          child: ListTile(
+                            //halaman code promo
+                            onTap: () {},
+                            leading: Icon(Icons.discount_outlined),
+                            minLeadingWidth: 10,
+                            title: Text(
+                              "LOOK WHAT'S PROMO IN HERE",
+                              style: GoogleFonts.quicksand(
+                                  fontSize: 13,
+                                  fontWeight: FontWeight.w600,
+                                  color: Colors.black),
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          InkWell(
+                            onTap: () {},
+                            child: Column(
+                              children: [
+                                Container(
+                                  width: 69,
+                                  height: 60,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.all(
+                                      Radius.circular(20.0),
+                                    ),
+                                    boxShadow: [
+                                      BoxShadow(
+                                        color: Colors.black12,
+                                        blurRadius: 6,
+                                        spreadRadius: 4,
+                                      ),
+                                    ],
+                                  ),
+                                  child: Image.asset(
+                                    'assets/img7.jpeg',
+                                    // fit: BoxFit.fill,
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                Text(
+                                  'Medical Record',
+                                  style: GoogleFonts.roboto(
+                                      fontSize: 11,
+                                      fontWeight: FontWeight.w500),
+                                )
+                              ],
+                            ),
+                          ),
+                          InkWell(
+                            onTap: () {},
+                            child: Column(
+                              children: [
+                                Container(
+                                  width: 69,
+                                  height: 60,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.all(
+                                      Radius.circular(20.0),
+                                    ),
+                                    boxShadow: [
+                                      BoxShadow(
+                                        color: Colors.black12,
+                                        blurRadius: 6,
+                                        spreadRadius: 4,
+                                      ),
+                                    ],
+                                  ),
+                                  child: Image.asset(
+                                    'assets/img8.jpeg',
+                                    // fit: BoxFit.fill,
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                Text(
+                                  'Patient Portal',
+                                  style: GoogleFonts.roboto(
+                                      fontSize: 11,
+                                      fontWeight: FontWeight.w500),
+                                )
+                              ],
+                            ),
+                          ),
+                          InkWell(
+                            onTap: () {},
+                            child: Column(
+                              children: [
+                                Container(
+                                  width: 69,
+                                  height: 60,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.all(
+                                      Radius.circular(20.0),
+                                    ),
+                                    boxShadow: [
+                                      BoxShadow(
+                                        color: Colors.black12,
+                                        blurRadius: 6,
+                                        spreadRadius: 4,
+                                      ),
+                                    ],
+                                  ),
+                                  child: Image.asset(
+                                    'assets/img9.jpeg',
+                                    // fit: BoxFit.fill,
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                Text(
+                                  'Covid-19 Form',
+                                  style: GoogleFonts.roboto(
+                                      fontSize: 11,
+                                      fontWeight: FontWeight.w500),
+                                )
+                              ],
+                            ),
+                          ),
+                        ],
+                      )
                     ],
                   ),
                 ),
