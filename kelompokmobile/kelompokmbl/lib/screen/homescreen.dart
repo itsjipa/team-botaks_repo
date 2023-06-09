@@ -143,8 +143,9 @@ class HomeScreen extends StatelessWidget {
                         ),
                       ),
                       Container(
-                        // width: ,
-                      )
+
+                          // width: ,
+                          )
                     ],
                   ),
                 ),
