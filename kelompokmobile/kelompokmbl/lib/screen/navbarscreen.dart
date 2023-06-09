@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kelompokmbl/screen/homescreen.dart';
+import 'package:kelompokmbl/screen/profilescreen.dart';
 
 class NavbarScreen extends StatefulWidget {
   const NavbarScreen({super.key});
@@ -16,7 +17,7 @@ class _NavbarScreenState extends State<NavbarScreen> {
     // Homescreen
     HomeScreen(),
     // Profile
-    Container(),
+    ProfileScreen()
   ];
 
   @override

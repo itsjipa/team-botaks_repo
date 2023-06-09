@@ -8,18 +8,27 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+  static final ValueNotifier<ThemeMode> themeNotifier =
+      ValueNotifier(ThemeMode.light);
   const MyApp({super.key});
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MultiProvider(
-      providers: [
-        ChangeNotifierProvider(create: (_) => HomeScreenProvider()),
-      ],
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        home: const WelcomeScreen(),
-      ),
+    return ValueListenableBuilder<ThemeMode>(
+      valueListenable: themeNotifier,
+      builder: (_, ThemeMode currentMode, __) {
+        return MultiProvider(
+          providers: [
+            ChangeNotifierProvider(create: (_) => HomeScreenProvider()),
+          ],
+          child: MaterialApp(
+            debugShowCheckedModeBanner: false,
+            darkTheme: ThemeData.dark(),
+            themeMode: currentMode,
+            home: const WelcomeScreen(),
+          ),
+        );
+      },
     );
   }
 }

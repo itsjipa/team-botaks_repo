@@ -59,7 +59,7 @@ class HomeScreen extends StatelessWidget {
                             height: 6,
                           ),
                           Text(
-                            'Kenneth Aiden',
+                            textProfileName,
                             style: GoogleFonts.rubik(
                                 color: Colors.black,
                                 fontWeight: FontWeight.bold,
@@ -190,7 +190,7 @@ class HomeScreen extends StatelessWidget {
                                         margin:
                                             EdgeInsets.only(left: 8, top: 8),
                                         child: Text(
-                                          'Book Appointment',
+                                          menu3,
                                           style: GoogleFonts.quicksand(
                                               fontSize: 11,
                                               fontWeight: FontWeight.w600),
@@ -256,7 +256,7 @@ class HomeScreen extends StatelessWidget {
                                         margin:
                                             EdgeInsets.only(left: 8, top: 8),
                                         child: Text(
-                                          'Your Appointment',
+                                          menu4,
                                           style: GoogleFonts.quicksand(
                                               fontSize: 11,
                                               fontWeight: FontWeight.w600),
@@ -342,7 +342,7 @@ class HomeScreen extends StatelessWidget {
                                   height: 10,
                                 ),
                                 Text(
-                                  'Medical Record',
+                                  menu5,
                                   style: GoogleFonts.roboto(
                                       fontSize: 11,
                                       fontWeight: FontWeight.w500),
@@ -378,7 +378,7 @@ class HomeScreen extends StatelessWidget {
                                   height: 10,
                                 ),
                                 Text(
-                                  'Patient Portal',
+                                  menu6,
                                   style: GoogleFonts.roboto(
                                       fontSize: 11,
                                       fontWeight: FontWeight.w500),
@@ -414,7 +414,7 @@ class HomeScreen extends StatelessWidget {
                                   height: 10,
                                 ),
                                 Text(
-                                  'Covid-19 Form',
+                                  menu7,
                                   style: GoogleFonts.roboto(
                                       fontSize: 11,
                                       fontWeight: FontWeight.w500),
