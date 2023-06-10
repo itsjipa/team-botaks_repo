@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:kelompokmbl/const.dart';
+import 'package:kelompokmbl/screen/covid19screen.dart';
 import 'package:kelompokmbl/screen/promoscreen.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -394,7 +395,13 @@ class HomeScreen extends StatelessWidget {
                             ),
                           ),
                           InkWell(
-                            onTap: () {},
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          const Covid19Screen()));
+                            },
                             child: Column(
                               children: [
                                 Container(
