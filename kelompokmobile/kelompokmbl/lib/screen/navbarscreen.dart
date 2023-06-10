@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kelompokmbl/screen/homescreen.dart';
+import 'package:kelompokmbl/screen/messagesscreeen.dart';
 import 'package:kelompokmbl/screen/profilescreen.dart';
 
 class NavbarScreen extends StatefulWidget {
@@ -13,7 +14,7 @@ class _NavbarScreenState extends State<NavbarScreen> {
   int _selectedIndex = 1;
   final _screens = [
     // Message
-    Container(),
+    MessagesScreen(),
     // Homescreen
     HomeScreen(),
     // Profile
