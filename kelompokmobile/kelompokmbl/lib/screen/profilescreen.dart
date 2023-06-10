@@ -6,6 +6,7 @@ import 'package:kelompokmbl/main.dart';
 // import 'package:kelompokmbl/screen/homescreen.dart';
 import 'package:kelompokmbl/screen/updateprofilescreen.dart';
 // import 'package:kelompokmbl/provider/homescreen_provider.dart';
+// ignore: unused_import
 import 'package:provider/provider.dart';
 
 class ProfileScreen extends StatelessWidget {

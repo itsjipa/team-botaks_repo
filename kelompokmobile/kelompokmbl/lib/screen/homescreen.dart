@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:kelompokmbl/const.dart';
+import 'package:kelompokmbl/screen/promoscreen.dart';
 
 class HomeScreen extends StatelessWidget {
   final images = [
@@ -295,7 +296,13 @@ class HomeScreen extends StatelessWidget {
                           color: Colors.white,
                           child: ListTile(
                             //halaman code promo
-                            onTap: () {},
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          const PromoScreen()));
+                            },
                             leading: Icon(Icons.discount_outlined),
                             minLeadingWidth: 10,
                             title: Text(

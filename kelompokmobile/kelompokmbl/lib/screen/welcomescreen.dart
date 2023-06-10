@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:kelompokmbl/screen/homescreen.dart';
+// import 'package:kelompokmbl/screen/homescreen.dart';
 import 'package:kelompokmbl/screen/navbarscreen.dart';
 
 class WelcomeScreen extends StatelessWidget {
