@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kelompokmbl/provider/homescreen_provider.dart';
+import 'package:kelompokmbl/provider/listfuture.dart';
 import 'package:kelompokmbl/screen/welcomescreen.dart';
 import 'package:provider/provider.dart';
 
@@ -20,6 +21,7 @@ class MyApp extends StatelessWidget {
         return MultiProvider(
           providers: [
             ChangeNotifierProvider(create: (_) => HomeScreenProvider()),
+            ChangeNotifierProvider(create: (_) => ListFutureScreen()),
           ],
           child: MaterialApp(
             debugShowCheckedModeBanner: false,

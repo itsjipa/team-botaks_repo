@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:kelompokmbl/const.dart';
+import 'package:kelompokmbl/screen/bookappointmentscreen.dart';
 import 'package:kelompokmbl/screen/covid19screen.dart';
+import 'package:kelompokmbl/screen/listappointmentscreen.dart';
 import 'package:kelompokmbl/screen/promoscreen.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -152,7 +154,13 @@ class HomeScreen extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           InkWell(
-                            onTap: () {},
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          BookAppointmentScreen()));
+                            },
                             child: Column(
                               // crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
@@ -218,7 +226,13 @@ class HomeScreen extends StatelessWidget {
                             ),
                           ),
                           InkWell(
-                            onTap: () {},
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          ListAppointmentScreen()));
+                            },
                             child: Column(
                               // crossAxisAlignment: CrossAxisAlignment.start,
                               children: [

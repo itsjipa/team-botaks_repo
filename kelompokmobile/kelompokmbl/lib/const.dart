@@ -30,10 +30,10 @@ const String images4 = "doctorimg5.jpeg";
 const String images5 = "doctorimg6.jpeg";
 
 List image = [
-      "doctorimg1.jpeg",
-      "doctorimg2.jpeg",
-      "doctorimg3.jpeg",
-      "doctorimg4.jpeg",
-      "doctorimg5.jpeg",
-      "doctorimg6.jpeg",
-    ];
+  "doctorimg1.jpeg",
+  "doctorimg2.jpeg",
+  "doctorimg3.jpeg",
+  "doctorimg4.jpeg",
+  "doctorimg5.jpeg",
+  "doctorimg6.jpeg",
+];
