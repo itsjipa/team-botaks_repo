@@ -1,13 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-// import 'package:google_fonts/google_fonts.dart';
 import 'package:kelompokmbl/const.dart';
 import 'package:kelompokmbl/main.dart';
-// import 'package:kelompokmbl/screen/homescreen.dart';
 import 'package:kelompokmbl/screen/updateprofilescreen.dart';
-// import 'package:kelompokmbl/provider/homescreen_provider.dart';
-// ignore: unused_import
-import 'package:provider/provider.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -15,23 +10,6 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   title: Text("Profile"),
-      //   centerTitle: true,
-      //   actions: [
-      //     IconButton(
-      //       onPressed: () {
-      //         MyApp.themeNotifier.value =
-      //             MyApp.themeNotifier.value == ThemeMode.light
-      //                 ? ThemeMode.dark
-      //                 : ThemeMode.light;
-      //       },
-      //       icon: Icon(MyApp.themeNotifier.value == ThemeMode.light
-      //           ? Icons.dark_mode
-      //           : Icons.light_mode),
-      //     ),
-      //   ],
-      // ),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -74,25 +52,10 @@ class ProfileScreen extends StatelessWidget {
                     children: [
                       Align(
                         alignment: FractionalOffset.center,
-                        child: CircleAvatar(
-                          backgroundColor: kPrimaryColor,
+                        child: CircleAvatar(                         
+                          backgroundImage:
+                              ExactAssetImage('assets/profile.jpeg'),
                           maxRadius: 45,
-                        ),
-                      ),
-                      Positioned(
-                        bottom: 0,
-                        right: 125,
-                        child: Container(
-                          width: 35,
-                          height: 35,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(100),
-                              color: aPrimaryColor),
-                          child: Icon(
-                            Icons.create,
-                            color: Colors.black,
-                            size: 20,
-                          ),
                         ),
                       ),
                     ],

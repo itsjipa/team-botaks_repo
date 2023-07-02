@@ -23,18 +23,9 @@ class ListFutureScreen extends ChangeNotifier {
         "name": "Drg. Thalia Smith",
         "type": "Prophylaxis",
         "img": "assets/doctorimg2.jpeg",
-        "date": "27/011/2022",
+        "date": "27/11/2023",
         "time": "04:25 PM"
       },
     ]
   };
-
-  // dynamic _data;
-  // dynamic get data => _data;
-  // set setData(val) {
-  //   var tmp = json.encode(val);
-  //   _data = json.decode(tmp);
-
-  //   notifyListeners();
-  // }
 }

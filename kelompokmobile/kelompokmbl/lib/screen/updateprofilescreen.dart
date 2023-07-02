@@ -1,9 +1,30 @@
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:kelompokmbl/const.dart';
 
-class UpdateProfileScreen extends StatelessWidget {
+class UpdateProfileScreen extends StatefulWidget {
   const UpdateProfileScreen({super.key});
+  
 
+  @override
+  
+  State<UpdateProfileScreen> createState() => _UpdateProfileScreenState();
+}
+
+class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
+//   File? image;
+
+// Future openCamera() async {
+//   final pickedImage =
+//       await ImagePicker().pickImage(source: ImageSource.camera);
+//   image = File(pickedImage!.path);
+// }
+
+// Future openGallery() async {
+//   final imageGallery =
+//       await ImagePicker().pickImage(source: ImageSource.gallery);
+//   image = File(imageGallery!.path);
+// }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,10 +40,16 @@ class UpdateProfileScreen extends StatelessWidget {
             children: [
               Stack(
                 children: [
+                  // image != null ? Align(
+                  //   alignment: FractionalOffset.center,
+                  //   child: ClipOval(
+                  //     child: Image.file(image!, width: 100, height: 100, fit: BoxFit.cover,),
+                  //   )
+                  // ) :
                   Align(
                     alignment: FractionalOffset.center,
                     child: CircleAvatar(
-                      backgroundColor: kPrimaryColor,
+                      backgroundImage: ExactAssetImage('assets/profile.jpeg'),
                       maxRadius: 45,
                     ),
                   ),
@@ -110,8 +137,7 @@ class UpdateProfileScreen extends StatelessWidget {
                             backgroundColor: kPrimaryColor,
                             side: BorderSide.none,
                             shape: StadiumBorder()),
-                        onPressed: () {
-                        },
+                        onPressed: () {},
                         child: Text(
                           "Saved",
                           style: TextStyle(color: Colors.black),

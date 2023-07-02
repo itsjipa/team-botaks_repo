@@ -42,7 +42,7 @@ class HomeScreen extends StatelessWidget {
                     Align(
                       alignment: FractionalOffset.topLeft,
                       child: CircleAvatar(
-                        backgroundColor: Color(0xFF26C6DA),
+                        backgroundImage: ExactAssetImage('assets/profile.jpeg'),
                         maxRadius: 36,
                       ),
                     ),
@@ -65,9 +65,10 @@ class HomeScreen extends StatelessWidget {
                           Text(
                             textProfileName,
                             style: GoogleFonts.rubik(
-                                color: Colors.black,
-                                fontWeight: FontWeight.bold,
-                                letterSpacing: 3),
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,
+                              letterSpacing: 1.5,
+                            ),
                           ),
                         ],
                       ),
