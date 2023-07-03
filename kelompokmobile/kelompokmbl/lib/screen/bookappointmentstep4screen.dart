@@ -16,7 +16,7 @@ class _BookAppointmentStep4ScreenState extends State<BookAppointmentStep4Screen>
         leading: IconButton(
             onPressed: () {},
             icon: const Icon(Icons.arrow_back_ios, color: Colors.black)),
-        title: Text("Step 3 out of 5",
+        title: Text("Step 4 out of 5",
             style: GoogleFonts.inriaSans(
                 fontSize: 13, color: const Color(0x5E000000))),
         centerTitle: true,
