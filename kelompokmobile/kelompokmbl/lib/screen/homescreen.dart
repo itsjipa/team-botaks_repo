@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:kelompokmbl/const.dart';
-import 'package:kelompokmbl/screen/bookappoint/step1register_screen.dart';
+import 'package:kelompokmbl/screen/bookappoint/bookappointmentstep1screen.dart';
 import 'package:kelompokmbl/screen/covid19screen.dart';
 import 'package:kelompokmbl/screen/listappointmentscreen.dart';
 import 'package:kelompokmbl/screen/promoscreen.dart';

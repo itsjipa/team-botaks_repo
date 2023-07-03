@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:kelompokmbl/const.dart';
 import 'package:kelompokmbl/provider/step1prov.dart';
+import 'package:kelompokmbl/screen/bookappoint/bookappointmentstep3screen.dart';
 import 'package:provider/provider.dart';
 
 class Step1Screen extends StatefulWidget {
@@ -45,7 +46,7 @@ class _Step1ScreenState extends State<Step1Screen> {
               ),
               Container(
                 width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height,
+                height: 550,
                 child: GridView.builder(
                     itemCount: prov.data['data']!.length,
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -95,12 +96,34 @@ class _Step1ScreenState extends State<Step1Screen> {
                                   backgroundImage:
                                       ExactAssetImage(item['img'].toString()),
                                 ),
-                              )
+                              ),
                             ],
                           ),
                         ),
                       );
                     }),
+              ),
+              Container(
+                width: MediaQuery.of(context).size.width,
+                height: 40,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: kPrimaryColor,
+                  ),
+                  onPressed: () => Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => BookAppointmentStep3Screen(),
+                    ),
+                  ),
+                  child: Text(
+                    "Next Step",
+                    style: GoogleFonts.inter(
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                    ),
+                  ),
+                ),
               ),
             ],
           ),
