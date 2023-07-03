@@ -70,7 +70,9 @@ class _BookAppointmentStep4ScreenState
                               color: const Color(0xFFEB1F1F),
                               decoration: TextDecoration.underline),
                         ))),
-              )
+              ),
+              Center(child: Text('Choose Your Payment Method', style: GoogleFonts.lexendDeca(fontSize: 20, color: Color(0xFF676767)))),
+              
             ],
           ),
         ),
