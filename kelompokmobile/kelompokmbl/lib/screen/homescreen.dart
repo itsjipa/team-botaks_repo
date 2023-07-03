@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:kelompokmbl/const.dart';
-import 'package:kelompokmbl/screen/bookappointmentscreen.dart';
+import 'package:kelompokmbl/screen/bookappoint/step1register_screen.dart';
 import 'package:kelompokmbl/screen/covid19screen.dart';
 import 'package:kelompokmbl/screen/listappointmentscreen.dart';
 import 'package:kelompokmbl/screen/promoscreen.dart';
@@ -16,12 +16,6 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   backgroundColor: Colors.transparent,
-      //   actions: [
-      //     IconButton(onPressed: () {}, icon: Icon(Icons.notifications_none))
-      //   ],
-      // ),
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.all(15.0),
@@ -159,8 +153,7 @@ class HomeScreen extends StatelessWidget {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) =>
-                                          BookAppointmentScreen()));
+                                      builder: (context) => Step1Screen()));
                             },
                             child: Column(
                               // crossAxisAlignment: CrossAxisAlignment.start,

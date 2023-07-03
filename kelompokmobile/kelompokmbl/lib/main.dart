@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:kelompokmbl/provider/homescreen_provider.dart';
 import 'package:kelompokmbl/provider/listfuture.dart';
 import 'package:kelompokmbl/provider/pastappoint.dart';
+import 'package:kelompokmbl/provider/step1prov.dart';
 import 'package:kelompokmbl/screen/welcomescreen.dart';
 import 'package:provider/provider.dart';
 
@@ -24,6 +25,7 @@ class MyApp extends StatelessWidget {
             ChangeNotifierProvider(create: (_) => HomeScreenProvider()),
             ChangeNotifierProvider(create: (_) => ListFutureScreen()),
             ChangeNotifierProvider(create: (_) => PastAppoint()),
+            ChangeNotifierProvider(create: (_) => Step1Provider()),
           ],
           child: MaterialApp(
             debugShowCheckedModeBanner: false,
