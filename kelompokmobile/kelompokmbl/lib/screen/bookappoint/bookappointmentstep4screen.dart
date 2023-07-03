@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:kelompokmbl/const.dart';
 
 class BookAppointmentStep4Screen extends StatefulWidget {
   const BookAppointmentStep4Screen({super.key});
@@ -23,7 +24,7 @@ class _BookAppointmentStep4ScreenState extends State<BookAppointmentStep4Screen>
                 fontSize: 13, color: const Color(0x5E000000))),
         centerTitle: true,
         elevation: 0,
-        backgroundColor: Colors.white,
+        backgroundColor: kPrimaryColor,
       ),
     );
   }

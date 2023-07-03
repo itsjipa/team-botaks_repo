@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:kelompokmbl/const.dart';
 import 'package:kelompokmbl/screen/bookappoint/bookappointmentstep4screen.dart';
 
 class BookAppointmentStep3Screen extends StatefulWidget {
   const BookAppointmentStep3Screen({super.key});
 
   @override
-  State<BookAppointmentStep3Screen> createState() => _BookAppointmentStep3ScreenState();
+  State<BookAppointmentStep3Screen> createState() =>
+      _BookAppointmentStep3ScreenState();
 }
 
 class _BookAppointmentStep3ScreenState
@@ -33,10 +35,10 @@ class _BookAppointmentStep3ScreenState
             icon: const Icon(Icons.arrow_back_ios, color: Colors.black)),
         title: Text("Step 3 out of 5",
             style: GoogleFonts.inriaSans(
-                fontSize: 13, color: const Color(0x5E000000))),
+              fontSize: 13, color: Colors.black45, fontWeight: FontWeight.w800)),
         centerTitle: true,
-        elevation: 0,
-        backgroundColor: Colors.white,
+        // elevation: 0,
+        backgroundColor: kPrimaryColor,
       ),
       backgroundColor: const Color(0xFFB3F7F9),
       body: Container(
@@ -255,10 +257,15 @@ class _BookAppointmentStep3ScreenState
                               backgroundColor: const Color(0xFFB3F7F9),
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(3)),
-                                  padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 100),
-                              elevation: 0), 
+                              padding: const EdgeInsets.symmetric(
+                                  vertical: 20, horizontal: 100),
+                              elevation: 0),
                           onPressed: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (context) => BookAppointmentStep4Screen()));
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        BookAppointmentStep4Screen()));
                           },
                           child: Text(
                             'Proceed To Pay',

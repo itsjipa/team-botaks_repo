@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:kelompokmbl/const.dart';
+import 'package:kelompokmbl/screen/bookappoint/bookappointmentstep3screen.dart';
 
 class Step2Screen extends StatefulWidget {
   const Step2Screen({super.key});
@@ -22,7 +23,15 @@ class _Step2ScreenState extends State<Step2Screen> {
         centerTitle: true,
         backgroundColor: kPrimaryColor,
       ),
-      body: SingleChildScrollView(),
+      body: SingleChildScrollView(
+        child: ElevatedButton(
+            onPressed: () => Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => BookAppointmentStep3Screen(),
+                  ),
+                ),
+            child: Text("data")),
+      ),
     );
   }
 }
