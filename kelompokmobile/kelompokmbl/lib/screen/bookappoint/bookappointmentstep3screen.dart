@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:kelompokmbl/screen/bookappointmentstep4screen.dart';
+import 'package:kelompokmbl/screen/bookappoint/bookappointmentstep4screen.dart';
 
 class BookAppointmentStep3Screen extends StatefulWidget {
   const BookAppointmentStep3Screen({super.key});
@@ -255,7 +255,7 @@ class _BookAppointmentStep3ScreenState
                               backgroundColor: const Color(0xFFB3F7F9),
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(3)),
-                                  padding: EdgeInsets.symmetric(vertical: 20, horizontal: 100),
+                                  padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 100),
                               elevation: 0), 
                           onPressed: () {
                             Navigator.push(context, MaterialPageRoute(builder: (context) => BookAppointmentStep4Screen()));
