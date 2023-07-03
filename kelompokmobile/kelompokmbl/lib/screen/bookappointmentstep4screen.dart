@@ -14,7 +14,9 @@ class _BookAppointmentStep4ScreenState extends State<BookAppointmentStep4Screen>
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pop(context);
+            },
             icon: const Icon(Icons.arrow_back_ios, color: Colors.black)),
         title: Text("Step 4 out of 5",
             style: GoogleFonts.inriaSans(
