@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:kelompokmbl/const.dart';
 import 'package:kelompokmbl/provider/step1prov.dart';
+import 'package:kelompokmbl/screen/bookappoint/bookappointmentstep2screen.dart';
 import 'package:kelompokmbl/screen/bookappoint/bookappointmentstep3screen.dart';
 import 'package:provider/provider.dart';
 
@@ -112,7 +113,7 @@ class _Step1ScreenState extends State<Step1Screen> {
                   ),
                   onPressed: () => Navigator.of(context).push(
                     MaterialPageRoute(
-                      builder: (context) => BookAppointmentStep3Screen(),
+                      builder: (context) => Step2Screen(),
                     ),
                   ),
                   child: Text(
