@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:kelompokmbl/screen/bookappointmentstep4screen.dart';
 
 class BookAppointmentStep3Screen extends StatefulWidget {
   const BookAppointmentStep3Screen({super.key});
@@ -8,7 +9,8 @@ class BookAppointmentStep3Screen extends StatefulWidget {
   State<BookAppointmentStep3Screen> createState() => _BookAppointmentStep3ScreenState();
 }
 
-class _BookAppointmentStep3ScreenState extends State<BookAppointmentStep3Screen> {
+class _BookAppointmentStep3ScreenState
+    extends State<BookAppointmentStep3Screen> {
   String itemSelected = 'Select A Doctor';
   List items = [
     'Select A Doctor',
@@ -25,7 +27,9 @@ class _BookAppointmentStep3ScreenState extends State<BookAppointmentStep3Screen>
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pop(context);
+            },
             icon: const Icon(Icons.arrow_back_ios, color: Colors.black)),
         title: Text("Step 3 out of 5",
             style: GoogleFonts.inriaSans(
@@ -128,21 +132,23 @@ class _BookAppointmentStep3ScreenState extends State<BookAppointmentStep3Screen>
                       const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
                   child: TextField(
                     decoration: InputDecoration(
-                      constraints:
-                          const BoxConstraints(maxWidth: 340, maxHeight: 60),
-                      focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(3.0),
-                          borderSide: const BorderSide(
-                              color: Color(0xFFB3F7F9), width: 1.5)),
-                      border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(3.0),
-                          borderSide: const BorderSide(
-                              color: Color(0xFFB4B4B4), width: 1.0)),
-                      enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(3.0),
-                          borderSide: const BorderSide(
-                              color: Color(0xFFB4B4B4), width: 1.0)),
-                    ),
+                        constraints:
+                            const BoxConstraints(maxWidth: 340, maxHeight: 60),
+                        focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(3.0),
+                            borderSide: const BorderSide(
+                                color: Color(0xFFB3F7F9), width: 1.5)),
+                        border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(3.0),
+                            borderSide: const BorderSide(
+                                color: Color(0xFFB4B4B4), width: 1.0)),
+                        enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(3.0),
+                            borderSide: const BorderSide(
+                                color: Color(0xFFB4B4B4), width: 1.0)),
+                        labelText: 'Phone Number',
+                        labelStyle: GoogleFonts.josefinSans(
+                            fontSize: 12, color: const Color(0xFF858585))),
                     keyboardType: TextInputType.phone,
                     style: GoogleFonts.josefinSans(fontSize: 12),
                   ),
@@ -237,41 +243,28 @@ class _BookAppointmentStep3ScreenState extends State<BookAppointmentStep3Screen>
                     dropdownColor: Colors.white,
                     isExpanded: true,
                     elevation: 0,
-                    style: GoogleFonts.josefinSans(fontSize: 12, color: Colors.black),
+                    style: GoogleFonts.josefinSans(
+                        fontSize: 12, color: Colors.black),
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 50),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      OutlinedButton(
-                          style: OutlinedButton.styleFrom(
-                            backgroundColor: Colors.white,
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(3)),
-                            elevation: 0,
-                          ),
-                          onPressed: () {},
-                          child: Text('Save',
-                              style: GoogleFonts.josefinSans(
-                                  fontSize: 14,
-                                  color: const Color(0xFF47BBBE)))),
-                      const SizedBox(width: 50),
-                      ElevatedButton(
+                Center(
+                  child: Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 50),
+                      child: ElevatedButton(
                           style: ElevatedButton.styleFrom(
                               backgroundColor: const Color(0xFFB3F7F9),
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(3)),
-                              elevation: 0),
-                          onPressed: () {},
+                                  padding: EdgeInsets.symmetric(vertical: 20, horizontal: 100),
+                              elevation: 0), 
+                          onPressed: () {
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => BookAppointmentStep4Screen()));
+                          },
                           child: Text(
                             'Proceed To Pay',
                             style: GoogleFonts.josefinSans(
                                 fontSize: 14, color: Colors.black),
-                          ))
-                    ],
-                  ),
+                          ))),
                 )
               ],
             )
