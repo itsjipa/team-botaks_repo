@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-// import 'package:kelompokmbl/screen/homescreen.dart';
 import 'package:kelompokmbl/screen/navbarscreen.dart';
 
 class WelcomeScreen extends StatelessWidget {
@@ -68,51 +67,93 @@ class WelcomeScreen extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                // tambahin file login disini
-                Material(
-                  color: Color(0xFFFF9800),
-                  borderRadius: BorderRadius.circular(10),
-                  child: InkWell(
-                    onTap: () {
-                      // Navigator.push(context, MaterialPageRoute(
-                      //   builder: (context) =>
-                      // ));
-                    },
-                    child: Padding(
-                      padding:
-                          EdgeInsets.symmetric(vertical: 15, horizontal: 40),
-                      child: Text(
-                        'Log In',
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 22,
-                            fontWeight: FontWeight.bold),
+                Container(
+                  width: 150,
+                  height: 55,
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Color(0xFFFF9800),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                    ),
+                    onPressed: () {},
+                    child: Text(
+                      'Log In',
+                      style: GoogleFonts.roboto(
+                        color: Colors.white,
+                        fontSize: 22,
+                        fontWeight: FontWeight.bold,
                       ),
                     ),
                   ),
                 ),
-                Material(
-                  color: Color(0xFFFF9800),
-                  borderRadius: BorderRadius.circular(10),
-                  child: InkWell(
-                    onTap: () {
-                      // Navigator.push(context, MaterialPageRoute(
-                      //   builder: (context) =>
-                      // ));
-                    },
-                    child: Padding(
-                      padding:
-                          EdgeInsets.symmetric(vertical: 15, horizontal: 40),
-                      child: Text(
-                        'Sign Up',
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 22,
-                            fontWeight: FontWeight.bold),
+                // tambahin file login disini
+                // Material(
+                //   color: Color(0xFFFF9800),
+                //   borderRadius: BorderRadius.circular(10),
+                //   child: InkWell(
+                //     onTap: () {
+                //       // Navigator.push(context, MaterialPageRoute(
+                //       //   builder: (context) =>
+                //       // ));
+                //     },
+                //     child: Padding(
+                //       padding:
+                //           EdgeInsets.symmetric(vertical: 15, horizontal: 40),
+                //       child: Text(
+                //         'Log In',
+                //         style: TextStyle(
+                //             color: Colors.white,
+                //             fontSize: 22,
+                //             fontWeight: FontWeight.bold),
+                //       ),
+                //     ),
+                //   ),
+                // ),
+                // Material(
+                //   color: Color(0xFFFF9800),
+                //   borderRadius: BorderRadius.circular(10),
+                //   child: InkWell(
+                //     onTap: () {
+                //       // Navigator.push(context, MaterialPageRoute(
+                //       //   builder: (context) =>
+                //       // ));
+                //     },
+                //     child: Padding(
+                //       padding:
+                //           EdgeInsets.symmetric(vertical: 15, horizontal: 40),
+                //       child: Text(
+                //         'Sign Up',
+                //         style: TextStyle(
+                //             color: Colors.white,
+                //             fontSize: 22,
+                //             fontWeight: FontWeight.bold),
+                //       ),
+                //     ),
+                //   ),
+                // )
+                Container(
+                  width: 150,
+                  height: 55,
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Color(0xFFFF9800),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                    ),
+                    onPressed: () {},
+                    child: Text(
+                      'Sign Up',
+                      style: GoogleFonts.roboto(
+                        color: Colors.white,
+                        fontSize: 22,
+                        fontWeight: FontWeight.bold,
                       ),
                     ),
                   ),
-                )
+                ),
               ],
             )
           ],
