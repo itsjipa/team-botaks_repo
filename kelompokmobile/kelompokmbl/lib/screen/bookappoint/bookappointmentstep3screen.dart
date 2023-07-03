@@ -7,8 +7,7 @@ class BookAppointmentStep3Screen extends StatefulWidget {
   const BookAppointmentStep3Screen({super.key});
 
   @override
-  State<BookAppointmentStep3Screen> createState() =>
-      _BookAppointmentStep3ScreenState();
+  State<BookAppointmentStep3Screen> createState() => _BookAppointmentStep3ScreenState();
 }
 
 class _BookAppointmentStep3ScreenState
@@ -35,7 +34,9 @@ class _BookAppointmentStep3ScreenState
             icon: const Icon(Icons.arrow_back_ios, color: Colors.black)),
         title: Text("Step 3 out of 5",
             style: GoogleFonts.inriaSans(
-              fontSize: 13, color: Colors.black45, fontWeight: FontWeight.w800)),
+                fontSize: 13,
+                color: Colors.black45,
+                fontWeight: FontWeight.w800)),
         centerTitle: true,
         // elevation: 0,
         backgroundColor: kPrimaryColor,
@@ -261,11 +262,8 @@ class _BookAppointmentStep3ScreenState
                                   vertical: 20, horizontal: 100),
                               elevation: 0),
                           onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) =>
-                                        BookAppointmentStep4Screen()));
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => const BookAppointmentStep4Screen()));
                           },
                           child: Text(
                             'Proceed To Pay',
