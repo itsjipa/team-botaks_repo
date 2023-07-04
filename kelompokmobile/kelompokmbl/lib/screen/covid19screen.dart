@@ -101,8 +101,8 @@ class Covid19Screen extends StatelessWidget {
                     width: 310,
                     height: 50,
                     margin: EdgeInsets.symmetric(vertical: 30),
-                    child: TextButton(
-                    style: TextButton.styleFrom(
+                    child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
                         backgroundColor: kPrimaryColor, shape: StadiumBorder()),
                     onPressed: (){},
                     child: Text(
