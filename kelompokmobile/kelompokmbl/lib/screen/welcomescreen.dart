@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:kelompokmbl/screen/loginscreen.dart';
 import 'package:kelompokmbl/screen/navbarscreen.dart';
 
 class WelcomeScreen extends StatelessWidget {
@@ -77,7 +78,10 @@ class WelcomeScreen extends StatelessWidget {
                         borderRadius: BorderRadius.circular(10),
                       ),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => ScreenLogin()));
+                    },
                     child: Text(
                       'Log In',
                       style: GoogleFonts.roboto(

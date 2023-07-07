@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kelompokmbl/data/color.dart';
+import 'package:kelompokmbl/screen/navbarscreen.dart';
 
 class ScreenLogin extends StatefulWidget {
   const ScreenLogin({super.key});
@@ -24,11 +25,11 @@ class _ScreenLoginState extends State<ScreenLogin> {
               SizedBox(
                 height: 80,
               ),
-              Center(
-                child: Container(
-                  child: Image.asset('assets/ilustration-login.png'),
-                ),
-              ),
+              // Center(
+              //   child: Container(
+              //     child: Image.asset('assets/ilustration-login.png'),
+              //   ),
+              // ),
               Container(
                   margin: EdgeInsets.only(top: 10),
                   child: Text(
@@ -57,7 +58,7 @@ class _ScreenLoginState extends State<ScreenLogin> {
                 child: TextField(
                   controller: _inputEmail,
                   obscureText: mounted,
-                  decoration: InputDecoration(
+                  decoration: InputDecoration(  
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(20),
                       borderSide: BorderSide(width: 2, color: Colors.black),
@@ -85,7 +86,10 @@ class _ScreenLoginState extends State<ScreenLogin> {
                     width: double.infinity,
                     height: 60,
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => NavbarScreen()));
+                      },
                       child: Text(
                         'Login',
                         style: TextStyle(fontSize: 18, color: Colors.black),
