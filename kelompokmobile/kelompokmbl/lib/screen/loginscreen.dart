@@ -25,19 +25,16 @@ class _ScreenLoginState extends State<ScreenLogin> {
               SizedBox(
                 height: 80,
               ),
-<<<<<<< HEAD
               // Center(
               //   child: Container(
               //     child: Image.asset('assets/ilustration-login.png'),
               //   ),
               // ),
-=======
               Center(
                 child: Container(
                   child: Image.asset('assets/loginscrenn.jpg'),
                 ),
               ),
->>>>>>> 02dceb7c8d029a26e81b26d40cd87052fdd130d4
               Container(
                   margin: EdgeInsets.only(top: 10),
                   child: Text(
