@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:kelompokmbl/const.dart';
-import 'package:kelompokmbl/screen/bookappoint/bookappointmentstep5screen.dart';
+import 'package:kelompokmbl/screen/listappointmentscreen.dart';
 import 'package:kelompokmbl/screen/promoscreen.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
 
 class BookAppointmentStep4Screen extends StatefulWidget {
   const BookAppointmentStep4Screen({super.key});
@@ -153,29 +154,68 @@ class _BookAppointmentStep4ScreenState extends State<BookAppointmentStep4Screen>
                 ),
               ),
               Center(
-                  child: Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 40),
-                      child: ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                              backgroundColor: const Color(0xFFB3F7F9),
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(100)),
-                              padding: const EdgeInsets.symmetric(horizontal: 150),
-                              elevation: 0),
-                          onPressed: () {
-                            Navigator.of(context).push(MaterialPageRoute(
-                                builder: (context) => const BookAppointmentStep5Screen()));
-                          },
-                          child: Text(
-                            'Pay',
-                            style: GoogleFonts.lexendDeca(
-                                fontSize: 14, fontWeight: FontWeight.w700,color: Color(0xFF454545)),
-                          ))),
-                )
+                child: Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 40),
+                    child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                            backgroundColor: const Color(0xFFB3F7F9),
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(100)),
+                            padding:
+                                const EdgeInsets.symmetric(horizontal: 150),
+                            elevation: 0),
+                        onPressed: () => _onAlertDialogSuccess(context),
+                        child: Text(
+                          'Pay',
+                          style: GoogleFonts.lexendDeca(
+                              fontSize: 14,
+                              fontWeight: FontWeight.w700,
+                              color: Color(0xFF454545)),
+                        ))),
+              )
             ],
           ),
         ),
       ),
     );
+  }
+
+  _onAlertDialogSuccess(BuildContext context) {
+    Alert(
+        context: context,
+        title: "Payment Success",
+        desc: "Thank you for booking an appointment at our practice",
+        content: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+              child: Text(
+                  'As soon as our staff sees your request they will inform you about your time slot. You’ll get a notification in this application',
+                  style: GoogleFonts.josefinSans(
+                      fontSize: 12, color: const Color(0x87000000)), textAlign: TextAlign.center,),
+            ),
+          ]
+        ),
+        image: Image.asset('assets/check.gif', width: 120),
+        style: AlertStyle(
+          titleStyle: GoogleFonts.josefinSans(fontSize: 16, fontWeight: FontWeight.w700, color: const Color(0xFF0069E4)),
+          descStyle: GoogleFonts.josefinSans(fontSize: 14, fontWeight: FontWeight.w700),
+          descPadding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+          backgroundColor: Colors.grey[50]
+        ),
+        buttons: [
+          DialogButton(
+              onPressed: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => const ListAppointmentScreen()));
+              },
+              color: const Color(0xFFB3F7F9),
+              radius: BorderRadius.circular(100.0),
+              child: Text('List of appointments',
+                  style: GoogleFonts.lexendDeca(
+                      fontSize: 14,
+                      fontWeight: FontWeight.w700,
+                      color: const Color(0xFF454545)))),
+        ]).show();
   }
 }
