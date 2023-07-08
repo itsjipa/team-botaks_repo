@@ -10,8 +10,7 @@ class BookAppointmentStep3Screen extends StatefulWidget {
   State<BookAppointmentStep3Screen> createState() => _BookAppointmentStep3ScreenState();
 }
 
-class _BookAppointmentStep3ScreenState
-    extends State<BookAppointmentStep3Screen> {
+class _BookAppointmentStep3ScreenState extends State<BookAppointmentStep3Screen> {
   String itemSelected = 'Select A Doctor';
   List items = [
     'Select A Doctor',
