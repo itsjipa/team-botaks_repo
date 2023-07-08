@@ -27,11 +27,6 @@ class _BookAppointmentStep3ScreenState
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            icon: const Icon(Icons.arrow_back_ios, color: Colors.black)),
         title: Text("Step 3 out of 5",
             style: GoogleFonts.inriaSans(
                 fontSize: 13,
