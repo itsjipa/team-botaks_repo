@@ -3,7 +3,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:kelompokmbl/const.dart';
 import 'package:kelompokmbl/screen/bookappoint/bookappointmentstep5screen.dart';
 import 'package:kelompokmbl/screen/promoscreen.dart';
-import 'package:provider/provider.dart';
 
 class BookAppointmentStep4Screen extends StatefulWidget {
   const BookAppointmentStep4Screen({super.key});
@@ -21,11 +20,6 @@ class _BookAppointmentStep4ScreenState extends State<BookAppointmentStep4Screen>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            icon: const Icon(Icons.arrow_back_ios, color: Colors.black)),
         title: Text("Step 4 out of 5",
             style: GoogleFonts.inriaSans(
                 fontSize: 13, color: const Color(0x5E000000))),
