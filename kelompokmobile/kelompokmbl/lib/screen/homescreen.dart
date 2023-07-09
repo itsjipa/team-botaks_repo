@@ -6,6 +6,7 @@ import 'package:kelompokmbl/screen/bookappoint/bookappointmentstep1screen.dart';
 import 'package:kelompokmbl/screen/covid19screen.dart';
 import 'package:kelompokmbl/screen/listappointmentscreen.dart';
 import 'package:kelompokmbl/screen/medicalrecord.dart';
+import 'package:kelompokmbl/screen/portalpasien.dart';
 import 'package:kelompokmbl/screen/promoscreen.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -384,7 +385,13 @@ class HomeScreen extends StatelessWidget {
                             ),
                           ),
                           InkWell(
-                            onTap: () {},
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          PortalPasien()));
+                            },
                             child: Column(
                               children: [
                                 Container(
