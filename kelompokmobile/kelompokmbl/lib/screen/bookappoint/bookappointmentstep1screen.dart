@@ -19,7 +19,7 @@ class _Step1ScreenState extends State<Step1Screen> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Step 1 out of 5',
+          'Step 1 out of 4',
           style: GoogleFonts.inriaSans(
               fontSize: 13, color: Colors.black45, fontWeight: FontWeight.w800),
         ),

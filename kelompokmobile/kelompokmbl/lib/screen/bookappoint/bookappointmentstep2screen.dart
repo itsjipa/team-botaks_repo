@@ -28,7 +28,7 @@ class _Step2ScreenState extends State<Step2Screen> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Step 2 out of 5',
+          'Step 2 out of 4',
           style: GoogleFonts.inriaSans(
               fontSize: 13, color: Colors.black45, fontWeight: FontWeight.w800),
         ),

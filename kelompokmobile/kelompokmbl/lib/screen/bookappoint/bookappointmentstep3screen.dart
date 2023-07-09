@@ -26,7 +26,7 @@ class _BookAppointmentStep3ScreenState extends State<BookAppointmentStep3Screen>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Step 3 out of 5",
+        title: Text("Step 3 out of 4",
             style: GoogleFonts.inriaSans(
                 fontSize: 13,
                 color: Colors.black45,

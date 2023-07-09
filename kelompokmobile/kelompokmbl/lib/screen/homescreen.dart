@@ -5,6 +5,7 @@ import 'package:kelompokmbl/const.dart';
 import 'package:kelompokmbl/screen/bookappoint/bookappointmentstep1screen.dart';
 import 'package:kelompokmbl/screen/covid19screen.dart';
 import 'package:kelompokmbl/screen/listappointmentscreen.dart';
+import 'package:kelompokmbl/screen/medicalrecord.dart';
 import 'package:kelompokmbl/screen/promoscreen.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -121,7 +122,7 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
               Container(
-                height: 440,
+                height: 460,
                 width: MediaQuery.of(context).size.width,
                 child: Container(
                   decoration: BoxDecoration(
@@ -293,6 +294,15 @@ class HomeScreen extends StatelessWidget {
                           ),
                         ],
                       ),
+                      
+                      Container(
+                        margin: EdgeInsets.only(left: 20.0, top: 20.0),
+                        child: Text(
+                          'Feature and Form',
+                          style: GoogleFonts.kanit(
+                              fontWeight: FontWeight.w400, fontSize: 18),
+                        ),
+                      ),
                       SizedBox(
                         height: 15,
                       ),
@@ -327,11 +337,18 @@ class HomeScreen extends StatelessWidget {
                       SizedBox(
                         height: 20,
                       ),
+                      
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           InkWell(
-                            onTap: () {},
+                            onTap: () {
+                               Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          const MedicalRecordScreen()));
+                            },
                             child: Column(
                               children: [
                                 Container(

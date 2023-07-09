@@ -9,19 +9,21 @@ class BookAppointmentStep4Screen extends StatefulWidget {
   const BookAppointmentStep4Screen({super.key});
 
   @override
-  State<BookAppointmentStep4Screen> createState() => _BookAppointmentStep4ScreenState();
+  State<BookAppointmentStep4Screen> createState() =>
+      _BookAppointmentStep4ScreenState();
 }
 
 enum PaymentMethod { card, cod, ovo, dana, spay, gopay }
 
-class _BookAppointmentStep4ScreenState extends State<BookAppointmentStep4Screen> {
+class _BookAppointmentStep4ScreenState
+    extends State<BookAppointmentStep4Screen> {
   PaymentMethod? _paymentItem = PaymentMethod.card;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Step 4 out of 5",
+        title: Text("Step 4 out of 4",
             style: GoogleFonts.inriaSans(
                 fontSize: 13, color: const Color(0x5E000000))),
         centerTitle: true,
@@ -185,24 +187,28 @@ class _BookAppointmentStep4ScreenState extends State<BookAppointmentStep4Screen>
         context: context,
         title: "Payment Success",
         desc: "Thank you for booking an appointment at our practice",
-        content: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
-              child: Text(
-                  'As soon as our staff sees your request they will inform you about your time slot. You’ll get a notification in this application',
-                  style: GoogleFonts.josefinSans(
-                      fontSize: 12, color: const Color(0x87000000)), textAlign: TextAlign.center,),
+        content: Column(children: [
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+            child: Text(
+              'As soon as our staff sees your request they will inform you about your time slot. You’ll get a notification in this application',
+              style: GoogleFonts.josefinSans(
+                  fontSize: 12, color: const Color(0x87000000)),
+              textAlign: TextAlign.center,
             ),
-          ]
-        ),
+          ),
+        ]),
         image: Image.asset('assets/check.gif', width: 120),
         style: AlertStyle(
-          titleStyle: GoogleFonts.josefinSans(fontSize: 16, fontWeight: FontWeight.w700, color: const Color(0xFF0069E4)),
-          descStyle: GoogleFonts.josefinSans(fontSize: 14, fontWeight: FontWeight.w700),
-          descPadding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
-          backgroundColor: Colors.grey[50]
-        ),
+            titleStyle: GoogleFonts.josefinSans(
+                fontSize: 16,
+                fontWeight: FontWeight.w700,
+                color: const Color(0xFF0069E4)),
+            descStyle: GoogleFonts.josefinSans(
+                fontSize: 14, fontWeight: FontWeight.w700),
+            descPadding:
+                const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+            backgroundColor: Colors.grey[50]),
         buttons: [
           DialogButton(
               onPressed: () {
