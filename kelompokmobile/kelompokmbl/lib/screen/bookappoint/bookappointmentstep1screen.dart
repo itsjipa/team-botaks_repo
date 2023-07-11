@@ -13,6 +13,9 @@ class Step1Screen extends StatefulWidget {
 }
 
 class _Step1ScreenState extends State<Step1Screen> {
+  bool _selectedIndex = false;
+  int? _currentIndex;
+
   @override
   Widget build(BuildContext context) {
     final prov = Provider.of<Step1Provider>(context);
@@ -57,10 +60,16 @@ class _Step1ScreenState extends State<Step1Screen> {
                     itemBuilder: (context, index) {
                       var item = prov.data['data']![index];
                       return InkWell(
-                        onTap: () {},
+                        splashColor: Colors.transparent,
+                        onTap: () {
+                          setState(() {
+                            _currentIndex = index;
+                            _selectedIndex = true;
+                          });
+                        },
                         child: Card(
                           elevation: 2,
-                          color: Colors.grey.shade300,
+                          color: _currentIndex == index ? kPrimaryColor : Colors.grey.shade300,
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
@@ -108,13 +117,14 @@ class _Step1ScreenState extends State<Step1Screen> {
                 height: 40,
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: kPrimaryColor,
+                    backgroundColor: _selectedIndex == true ? kPrimaryColor : Colors.grey,
                   ),
-                  onPressed: () => Navigator.of(context).push(
+                  onPressed: _selectedIndex ? () => Navigator.of(context).push(
                     MaterialPageRoute(
                       builder: (context) => Step2Screen(),
                     ),
-                  ),
+                  ) : null,
+                  
                   child: Text(
                     "Next Step",
                     style: GoogleFonts.inter(
