@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kelompokmbl/provider/faq_provider.dart';
 import 'package:kelompokmbl/provider/homescreen_provider.dart';
 import 'package:kelompokmbl/provider/listfuture.dart';
 import 'package:kelompokmbl/provider/medicalrecord_provider.dart';
@@ -28,6 +29,7 @@ class MyApp extends StatelessWidget {
             ChangeNotifierProvider(create: (_) => PastAppoint()),
             ChangeNotifierProvider(create: (_) => Step1Provider()),
             ChangeNotifierProvider(create: (_) => MedicalProvider()),
+            ChangeNotifierProvider(create: (_) => FAQScreen()),
           ],
           child: MaterialApp(
             debugShowCheckedModeBanner: false,

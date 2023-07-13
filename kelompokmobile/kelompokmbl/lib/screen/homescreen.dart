@@ -2,12 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:kelompokmbl/const.dart';
+import 'package:kelompokmbl/provider/faq_provider.dart';
 import 'package:kelompokmbl/screen/bookappoint/bookappointmentstep1screen.dart';
 import 'package:kelompokmbl/screen/covid19screen.dart';
 import 'package:kelompokmbl/screen/listappointmentscreen.dart';
 import 'package:kelompokmbl/screen/medicalrecord.dart';
 import 'package:kelompokmbl/screen/portalpasien.dart';
 import 'package:kelompokmbl/screen/promoscreen.dart';
+import 'package:provider/provider.dart';
+import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 class HomeScreen extends StatelessWidget {
   final images = [
@@ -17,6 +20,7 @@ class HomeScreen extends StatelessWidget {
   ];
   @override
   Widget build(BuildContext context) {
+    final prov = Provider.of<FAQScreen>(context);
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
@@ -97,33 +101,7 @@ class HomeScreen extends StatelessWidget {
                 height: 25,
               ),
               Container(
-                alignment: Alignment.center,
-                margin: EdgeInsets.symmetric(horizontal: 10.0),
-                padding: EdgeInsets.symmetric(horizontal: 10.0),
-                height: 44,
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(20),
-                    boxShadow: [
-                      BoxShadow(
-                        offset: Offset(0, 10),
-                        blurRadius: 50,
-                        color: kPrimaryColor.withOpacity(0.23),
-                      )
-                    ]),
-                child: TextField(
-                  decoration: InputDecoration(
-                      hintText: "Search your problem",
-                      hintStyle: GoogleFonts.rubik(
-                        color: kPrimaryColor.withOpacity(0.5),
-                      ),
-                      enabledBorder: InputBorder.none,
-                      focusedBorder: InputBorder.none,
-                      icon: Icon(Icons.search)),
-                ),
-              ),
-              Container(
-                height: 460,
+                height: 940,
                 width: MediaQuery.of(context).size.width,
                 child: Container(
                   decoration: BoxDecoration(
@@ -141,7 +119,7 @@ class HomeScreen extends StatelessWidget {
                         child: Text(
                           'Booking and List',
                           style: GoogleFonts.kanit(
-                              fontWeight: FontWeight.w400, fontSize: 18),
+                              fontWeight: FontWeight.bold, fontSize: 18),
                         ),
                       ),
                       SizedBox(
@@ -295,13 +273,12 @@ class HomeScreen extends StatelessWidget {
                           ),
                         ],
                       ),
-                      
                       Container(
                         margin: EdgeInsets.only(left: 20.0, top: 20.0),
                         child: Text(
                           'Feature and Form',
                           style: GoogleFonts.kanit(
-                              fontWeight: FontWeight.w400, fontSize: 18),
+                              fontWeight: FontWeight.bold, fontSize: 18),
                         ),
                       ),
                       SizedBox(
@@ -338,13 +315,12 @@ class HomeScreen extends StatelessWidget {
                       SizedBox(
                         height: 20,
                       ),
-                      
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           InkWell(
                             onTap: () {
-                               Navigator.push(
+                              Navigator.push(
                                   context,
                                   MaterialPageRoute(
                                       builder: (context) =>
@@ -389,8 +365,7 @@ class HomeScreen extends StatelessWidget {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) =>
-                                          PortalPasien()));
+                                      builder: (context) => PortalPasien()));
                             },
                             child: Column(
                               children: [
@@ -469,7 +444,123 @@ class HomeScreen extends StatelessWidget {
                             ),
                           ),
                         ],
-                      )
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(
+                          left: 20.0,
+                          top: 20.0,
+                        ),
+                        child: Text(
+                          'FAQ',
+                          style: GoogleFonts.kanit(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Container(
+                        alignment: Alignment.center,
+                        margin: EdgeInsets.symmetric(horizontal: 10.0),
+                        padding: EdgeInsets.symmetric(horizontal: 10.0),
+                        height: 44,
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(20),
+                            boxShadow: [
+                              BoxShadow(
+                                offset: Offset(0, 10),
+                                blurRadius: 50,
+                                color: kPrimaryColor.withOpacity(0.23),
+                              )
+                            ]),
+                        child: TextField(
+                          decoration: InputDecoration(
+                              hintText: "Search your problem",
+                              hintStyle: GoogleFonts.rubik(
+                                color: kPrimaryColor.withOpacity(0.5),
+                              ),
+                              enabledBorder: InputBorder.none,
+                              focusedBorder: InputBorder.none,
+                              icon: Icon(Icons.search)),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Container(
+                        padding: EdgeInsets.only(
+                          left: 15,
+                          right: 15,
+                        ),
+                        child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: List.generate(prov.list['data']!.length,
+                                (index) {
+                              var item = prov.list['data']![index];
+                              return Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Container(
+                                    decoration: BoxDecoration(
+                                        color: Colors.white,
+                                        boxShadow: [
+                                          BoxShadow(
+                                            color: Colors.black26,
+                                            blurRadius: 3,
+                                            spreadRadius: 2,
+                                          ),
+                                        ]),
+                                    child: SizedBox(
+                                      width: 350,
+                                      child: Column(
+                                        children: [
+                                          ListTile(
+                                            onTap: () {},
+                                            // tileColor: Colors.grey,
+                                            leading: Icon(MdiIcons.circleSmall, color: Colors.black, ),
+                                            minLeadingWidth: 10,
+                                            title: Text(
+                                              item['title'].toString(),
+                                              style: GoogleFonts.roboto(
+                                                fontWeight: FontWeight.w500,
+                                                fontSize: 14,
+                                              ),
+                                            ),
+                                          )
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: 10,
+                                  )
+                                ],
+                              );
+                            })
+
+                            //     Column(
+                            //   crossAxisAlignment: CrossAxisAlignment.start,
+                            //   children:
+                            //       List.generate(prov.list['data']!.length, (index) {
+                            //     var item = prov.list['data']![index];
+                            //     return Column(
+                            //       children: [
+                            //         ListTile(
+                            //           leading: Text(item['no'].toString()),
+                            //         )
+                            //       ],
+                            //     );
+                            //   }),
+                            // ),
+
+                            ),
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
                     ],
                   ),
                 ),
@@ -478,7 +569,6 @@ class HomeScreen extends StatelessWidget {
           ),
         ),
       ),
-      
     );
   }
 
