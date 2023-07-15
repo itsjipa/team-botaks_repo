@@ -9,14 +9,12 @@ class BookAppointmentStep4Screen extends StatefulWidget {
   const BookAppointmentStep4Screen({super.key});
 
   @override
-  State<BookAppointmentStep4Screen> createState() =>
-      _BookAppointmentStep4ScreenState();
+  State<BookAppointmentStep4Screen> createState() => _BookAppointmentStep4ScreenState();
 }
 
 enum PaymentMethod { card, cod, ovo, dana, spay, gopay }
 
-class _BookAppointmentStep4ScreenState
-    extends State<BookAppointmentStep4Screen> {
+class _BookAppointmentStep4ScreenState extends State<BookAppointmentStep4Screen> {
   PaymentMethod? _paymentItem = PaymentMethod.card;
 
   @override
@@ -52,7 +50,7 @@ class _BookAppointmentStep4ScreenState
                             color: Colors.black))),
               ),
               Center(
-                  child: Text('IDR 0',
+                  child: Text('IDR 100000',
                       style: GoogleFonts.libreBaskerville(
                           fontSize: 50, color: const Color(0xFF00DEE4)))),
               Padding(
