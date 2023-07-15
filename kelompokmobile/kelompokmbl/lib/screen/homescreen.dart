@@ -7,20 +7,30 @@ import 'package:kelompokmbl/screen/bookappoint/bookappointmentstep1screen.dart';
 import 'package:kelompokmbl/screen/covid19screen.dart';
 import 'package:kelompokmbl/screen/listappointmentscreen.dart';
 import 'package:kelompokmbl/screen/medicalrecord.dart';
+import 'package:kelompokmbl/screen/notification_screen.dart';
 import 'package:kelompokmbl/screen/portalpasien.dart';
 import 'package:kelompokmbl/screen/promoscreen.dart';
-import 'package:provider/provider.dart';
+// import 'package:provider/provider.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  TextEditingController editingController = TextEditingController();
   final images = [
     'assets/img2.jpeg',
     'assets/img3.jpeg',
     'assets/img4.jpeg',
   ];
+  List<FAQScreen> faqscreens = allFAQ;
   @override
   Widget build(BuildContext context) {
-    final prov = Provider.of<FAQScreen>(context);
+    // final prov = Provider.of<FAQScreen>(context);
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
@@ -31,7 +41,12 @@ class HomeScreen extends StatelessWidget {
               Align(
                 alignment: Alignment.topRight,
                 child: IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => NotificationScreen()));
+                  },
                   icon: Icon(Icons.notifications_none),
                 ),
               ),
@@ -477,6 +492,8 @@ class HomeScreen extends StatelessWidget {
                               )
                             ]),
                         child: TextField(
+                          onChanged: searchFAQ,
+                          controller: editingController,
                           decoration: InputDecoration(
                               hintText: "Search your problem",
                               hintStyle: GoogleFonts.rubik(
@@ -497,9 +514,8 @@ class HomeScreen extends StatelessWidget {
                         ),
                         child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
-                            children: List.generate(prov.list['data']!.length,
-                                (index) {
-                              var item = prov.list['data']![index];
+                            children: List.generate(faqscreens.length, (index) {
+                              final item = faqscreens[index];
                               return Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
@@ -520,10 +536,13 @@ class HomeScreen extends StatelessWidget {
                                           ListTile(
                                             onTap: () {},
                                             // tileColor: Colors.grey,
-                                            leading: Icon(MdiIcons.circleSmall, color: Colors.black, ),
+                                            leading: Icon(
+                                              MdiIcons.circleSmall,
+                                              color: Colors.black,
+                                            ),
                                             minLeadingWidth: 10,
                                             title: Text(
-                                              item['title'].toString(),
+                                              item.title,
                                               style: GoogleFonts.roboto(
                                                 fontWeight: FontWeight.w500,
                                                 fontSize: 14,
@@ -572,6 +591,8 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
+  
+
   Widget buildImage(image, index) => Container(
         // margin: EdgeInsets.symmetric(horizontal: 24),
         width: 500,
@@ -581,4 +602,16 @@ class HomeScreen extends StatelessWidget {
           fit: BoxFit.cover,
         ),
       );
+
+  void searchFAQ(String query) {
+    
+    final suggestions = allFAQ.where((item) {
+      final faqTitle = item.title.toLowerCase();
+      final input = query.toLowerCase();
+
+      return faqTitle.contains(input);
+    }).toList();
+
+    setState(() => faqscreens = suggestions);
+  }
 }

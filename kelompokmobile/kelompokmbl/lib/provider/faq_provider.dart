@@ -1,16 +1,20 @@
 import 'package:flutter/material.dart';
 
-class FAQScreen extends ChangeNotifier {
-  final list = {
-    "data": [
-      {"no": "1", "title": "Apa saja pelayanan di GumSmile Dental Care ini "},
-      {"no": "2", "title": "Berapa lama perawatan Orthodontic berlangsung"},
-      {
-        "no": "3",
-        "title": "Apa saja efek samping dari penggunaan perawatan Orthodontic"
-      },
-      {"no": "4", "title": "Apakah harus membuat janji terlebih dahulu"},
-      {"no": "5", "title": "Bisa membayar tunai tidak"}
-    ]
-  };
+class FAQScreen {
+  final String title;
+
+  const FAQScreen({
+    required this.title,
+  });
 }
+
+const allFAQ = [
+  FAQScreen(
+    title: "Apa saja pelayanan di GumSmile Dental Care",
+  ),
+  FAQScreen(title: "Berapa lama perawatan Orthodontic berlangsung"),
+  FAQScreen(
+      title: "Apa saja efek samping dari penggunaan perawatan Orthodontic"),
+  FAQScreen(title: "Apa kita harus membuat janji temu telebih dahulu"),
+  FAQScreen(title: "Bisa membayar secara tunai tidak")
+];
