@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:kelompokmbl/const.dart';
@@ -12,124 +13,126 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
+  // final FirebaseAuth _auth = FirebaseAuth.instance;
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          // mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            SizedBox(
-              height: 40,
-            ),
-            Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        // mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          SizedBox(
+            height: 40,
+          ),
+          Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Profile',
+                    style: GoogleFonts.roboto(
+                        fontSize: 28, fontWeight: FontWeight.bold),
+                  ),
+                  IconButton(
+                    onPressed: () {
+                      MyApp.themeNotifier.value =
+                          MyApp.themeNotifier.value == ThemeMode.light
+                              ? ThemeMode.dark
+                              : ThemeMode.light;
+                    },
+                    icon: Icon(MyApp.themeNotifier.value == ThemeMode.light
+                        ? Icons.dark_mode
+                        : Icons.light_mode),
+                  ),
+                ],
+              )),
+          SizedBox(
+            height: 20,
+          ),
+          Container(
+            padding: EdgeInsets.all(20),
+            child: Column(
+              children: [
+                Stack(
                   children: [
-                    Text(
-                      'Profile',
-                      style: GoogleFonts.roboto(
-                          fontSize: 28, fontWeight: FontWeight.bold),
-                    ),
-                    IconButton(
-                      onPressed: () {
-                        MyApp.themeNotifier.value =
-                            MyApp.themeNotifier.value == ThemeMode.light
-                                ? ThemeMode.dark
-                                : ThemeMode.light;
-                      },
-                      icon: Icon(MyApp.themeNotifier.value == ThemeMode.light
-                          ? Icons.dark_mode
-                          : Icons.light_mode),
+                    Align(
+                      alignment: FractionalOffset.center,
+                      child: CircleAvatar(
+                        backgroundImage: ExactAssetImage('assets/profile.jpeg'),
+                        maxRadius: 45,
+                      ),
                     ),
                   ],
-                )),
-            SizedBox(
-              height: 20,
-            ),
-            Container(
-              padding: EdgeInsets.all(20),
-              child: Column(
-                children: [
-                  Stack(
-                    children: [
-                      Align(
-                        alignment: FractionalOffset.center,
-                        child: CircleAvatar(                         
-                          backgroundImage:
-                              ExactAssetImage('assets/profile.jpeg'),
-                          maxRadius: 45,
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Text(
-                    textProfileName,
-                    style: GoogleFonts.quicksand(
-                        fontWeight: FontWeight.bold, fontSize: 15),
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Container(
-                    width: 200,
-                    // color: Colors.black,
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                          backgroundColor: kPrimaryColor,
-                          side: BorderSide.none,
-                          shape: StadiumBorder()),
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) =>
-                                    const UpdateProfileScreen()));
-                      },
-                      child: Text(
-                        textEditProfile,
-                        style: TextStyle(color: Colors.black),
-                      ),
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Text(
+                  textProfileName,
+                  style: GoogleFonts.quicksand(
+                      fontWeight: FontWeight.bold, fontSize: 15),
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Container(
+                  width: 200,
+                  // color: Colors.black,
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                        backgroundColor: kPrimaryColor,
+                        side: BorderSide.none,
+                        shape: StadiumBorder()),
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  const UpdateProfileScreen()));
+                    },
+                    child: Text(
+                      textEditProfile,
+                      style: TextStyle(color: Colors.black),
                     ),
                   ),
-                  SizedBox(
-                    height: 30,
-                  ),
-                  Divider(),
+                ),
+                SizedBox(
+                  height: 30,
+                ),
+                Divider(),
 
-                  // Menu
-                  Profilesetting(
-                      title: menu1, icon: Icons.settings, onTap: () {}),
-                  Profilesetting(
-                      title: menu2, icon: Icons.wallet, onTap: () {}),
-                  Profilesetting(
-                    title: menu8,
-                    icon: Icons.question_mark,
-                    onTap: () {},
-                  ),
-                  Divider(
-                    color: Colors.grey,
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  Profilesetting(
-                    title: textLogoutDialog,
-                    icon: Icons.logout_outlined,
-                    onTap: () {},
-                    textColor: Colors.red.shade800,
-                    endIcon: false,
-                  )
-                ],
-              ),
+                // Menu
+                Profilesetting(
+                    title: menu1, icon: Icons.settings, onTap: () {}),
+                Profilesetting(title: menu2, icon: Icons.wallet, onTap: () {}),
+                Profilesetting(
+                  title: menu8,
+                  icon: Icons.question_mark,
+                  onTap: () {},
+                ),
+                Divider(
+                  color: Colors.grey,
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Profilesetting(
+                  title: textLogoutDialog,
+                  icon: Icons.logout_outlined,
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
+                  textColor: Colors.red.shade800,
+                  endIcon: false,
+                )
+              ],
             ),
-          ],
-        ),
-      );
+          ),
+        ],
+      ),
+    );
   }
 }
 
