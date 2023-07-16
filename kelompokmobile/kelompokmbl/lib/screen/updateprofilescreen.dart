@@ -1,17 +1,30 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:kelompokmbl/const.dart';
 
 class UpdateProfileScreen extends StatefulWidget {
   const UpdateProfileScreen({super.key});
-  
 
   @override
-  
   State<UpdateProfileScreen> createState() => _UpdateProfileScreenState();
 }
 
 class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
 //   File? image;
+  File? _image;
+
+  Future getImage() async {
+    final image = await ImagePicker().pickImage(source: ImageSource.gallery);
+    if (image == null) return;
+
+    final imageTmp = File(image.path);
+
+    setState(() {
+      this._image = imageTmp;
+    });
+  }
 
 // Future openCamera() async {
 //   final pickedImage =
@@ -48,8 +61,25 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
                   Align(
                     alignment: FractionalOffset.center,
                     child: CircleAvatar(
-                      backgroundImage: ExactAssetImage('assets/profile.jpeg'),
-                      maxRadius: 45,
+                      backgroundColor: kPrimaryColor,
+                      radius: 50.0,
+                      child: CircleAvatar(
+                        maxRadius: 48.0,
+                        child: ClipOval(
+                          child: _image != null
+                              ? Image.file(
+                                  _image!,
+                                  fit: BoxFit.cover,
+                                  width: MediaQuery.of(context).size.width,
+                                )
+                              : Image.asset(
+                                  'assets/profile.jpeg',
+                                  fit: BoxFit.cover,
+                                  width: MediaQuery.of(context).size.width,
+                                ),
+                        ),
+                        backgroundColor: Colors.white,
+                      ),
                     ),
                   ),
                   Positioned(
@@ -60,11 +90,14 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
                       height: 35,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(100),
-                          color: aPrimaryColor),
-                      child: Icon(
-                        Icons.camera_alt_outlined,
-                        color: Colors.black,
-                        size: 20,
+                          color: kPrimaryColor),
+                      child: IconButton(
+                        onPressed: getImage,
+                        icon: Icon(
+                          Icons.camera_alt_outlined,
+                          color: Colors.black54,
+                          size: 20,
+                        ),
                       ),
                     ),
                   ),
