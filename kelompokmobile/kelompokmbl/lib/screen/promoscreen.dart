@@ -8,6 +8,7 @@ class PromoScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // backgroundColor: kPrimaryColor,
       appBar: AppBar(
         title: Text("Code Promo"),
         centerTitle: true,
@@ -74,7 +75,7 @@ class PromoMenu extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 25),
       child: Container(
-        height: 135,
+        height: 155,
         width: 500,
         margin: EdgeInsets.symmetric(vertical: 20),
         decoration: BoxDecoration(
@@ -114,6 +115,10 @@ class PromoMenu extends StatelessWidget {
                     fontWeight: FontWeight.w600,
                     fontSize: 15),
               ),
+            ),
+            Divider(
+              // height: 1,
+              thickness: 1,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,

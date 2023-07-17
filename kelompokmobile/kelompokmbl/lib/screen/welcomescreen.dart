@@ -12,7 +12,7 @@ class WelcomeScreen extends StatelessWidget {
       child: Container(
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
-        padding: EdgeInsets.all(15),
+        padding: EdgeInsets.all(15.0),
         child: Column(
           children: [
             SizedBox(

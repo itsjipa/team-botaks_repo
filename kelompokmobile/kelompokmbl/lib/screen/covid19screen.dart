@@ -15,7 +15,7 @@ class Covid19Screen extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(20.0),
+          padding: const EdgeInsets.all(15.0),
           child: Container(
             width: 400,
             height: 350,

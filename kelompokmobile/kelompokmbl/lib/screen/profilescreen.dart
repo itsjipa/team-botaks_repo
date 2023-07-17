@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:kelompokmbl/const.dart';
 import 'package:kelompokmbl/main.dart';
+import 'package:kelompokmbl/screen/aboutus_screen.dart';
 import 'package:kelompokmbl/screen/updateprofilescreen.dart';
 
 class ProfileScreen extends StatefulWidget {
@@ -110,7 +111,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 Profilesetting(
                   title: menu8,
                   icon: Icons.question_mark,
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  const AboutUsScreen()));
+                  },
                 ),
                 Divider(
                   color: Colors.grey,

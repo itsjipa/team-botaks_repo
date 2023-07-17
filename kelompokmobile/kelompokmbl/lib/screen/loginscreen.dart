@@ -18,7 +18,7 @@ class _ScreenLoginState extends State<ScreenLogin> {
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(15),
+          padding: EdgeInsets.all(15.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [

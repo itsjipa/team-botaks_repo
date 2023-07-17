@@ -47,7 +47,7 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
       ),
       body: SingleChildScrollView(
         child: Container(
-          padding: EdgeInsets.all(20),
+          padding: EdgeInsets.all(15.0),
           child: Column(
             children: [
               Stack(
