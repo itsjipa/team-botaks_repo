@@ -1,8 +1,9 @@
-import 'package:firebase_auth/firebase_auth.dart';
+// import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+// import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:kelompokmbl/const.dart';
-import 'package:kelompokmbl/main.dart';
+// import 'package:kelompokmbl/main.dart';
 import 'package:kelompokmbl/screen/aboutus_screen.dart';
 import 'package:kelompokmbl/screen/updateprofilescreen.dart';
 
@@ -27,28 +28,33 @@ class _ProfileScreenState extends State<ProfileScreen> {
             height: 40,
           ),
           Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'Profile',
-                    style: GoogleFonts.roboto(
-                        fontSize: 28, fontWeight: FontWeight.bold),
-                  ),
-                  IconButton(
-                    onPressed: () {
-                      MyApp.themeNotifier.value =
-                          MyApp.themeNotifier.value == ThemeMode.light
-                              ? ThemeMode.dark
-                              : ThemeMode.light;
-                    },
-                    icon: Icon(MyApp.themeNotifier.value == ThemeMode.light
-                        ? Icons.dark_mode
-                        : Icons.light_mode),
-                  ),
-                ],
-              )),
+            padding: EdgeInsets.symmetric(horizontal: 20),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  'Profile',
+                  style: GoogleFonts.roboto(
+                      fontSize: 28, fontWeight: FontWeight.bold),
+                ),
+                // IconButton(
+                //   onPressed: () {
+                //     Get.isDarkMode
+                //         ? Get.changeTheme(ThemeData.light())
+                //         : Get.changeTheme(ThemeData.dark());
+                //     // MyApp.themeNotifier.value =
+                //     //     MyApp.themeNotifier.value == ThemeMode.light
+                //     //         ? ThemeMode.dark
+                //     //         : ThemeMode.light;
+                //   },
+                //   icon: Icon(Icons.lightbulb),
+                // Icon(MyApp.themeNotifier.value == ThemeMode.light
+                //     ? Icons.dark_mode
+                //     : Icons.light_mode),
+                //   ),
+              ],
+            ),
+          ),
           SizedBox(
             height: 20,
           ),
@@ -110,13 +116,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 Profilesetting(title: menu2, icon: Icons.wallet, onTap: () {}),
                 Profilesetting(
                   title: menu8,
+                  textColor: Colors.black,
                   icon: Icons.question_mark,
                   onTap: () {
                     Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) =>
-                                  const AboutUsScreen()));
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const AboutUsScreen()));
                   },
                 ),
                 Divider(
@@ -161,9 +167,9 @@ class Profilesetting extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    MyApp.themeNotifier.value == ThemeMode.light
-        ? Icons.dark_mode
-        : kPrimaryColor;
+    // MyApp.themeNotifier.value == ThemeMode.light
+    //     ? Icons.dark_mode
+    //     : kPrimaryColor;
     return ListTile(
         onTap: onTap,
         leading: Container(

@@ -14,7 +14,7 @@ class _NavbarScreenState extends State<NavbarScreen> {
   int _selectedIndex = 1;
   final _screens = [
     // Message
-    MessagesScreen(),
+    MessageScreen(),
     // Homescreen
     HomeScreen(),
     // Profile

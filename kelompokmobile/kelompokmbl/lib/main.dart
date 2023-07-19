@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:kelompokmbl/provider/aboutus_provider.dart';
 // import 'package:kelompokmbl/provider/faq_provider.dart';
 import 'package:kelompokmbl/provider/homescreen_provider.dart';
 import 'package:kelompokmbl/provider/listfuture.dart';
 import 'package:kelompokmbl/provider/medicalrecord_provider.dart';
+import 'package:kelompokmbl/provider/messageprov.dart';
 import 'package:kelompokmbl/provider/notif_provider.dart';
 import 'package:kelompokmbl/provider/pastappoint.dart';
 import 'package:kelompokmbl/provider/step1prov.dart';
+import 'package:kelompokmbl/screen/aboutus_screen.dart';
 import 'package:kelompokmbl/screen/welcomescreen.dart';
 import 'package:provider/provider.dart';
 
@@ -20,30 +24,33 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return ValueListenableBuilder<ThemeMode>(
-      valueListenable: themeNotifier,
-      builder: (_, ThemeMode currentMode, __) {
-        return MultiProvider(
-          providers: [
-            ChangeNotifierProvider(create: (_) => HomeScreenProvider()),
-            ChangeNotifierProvider(create: (_) => ListFutureScreen()),
-            ChangeNotifierProvider(create: (_) => PastAppoint()),
-            ChangeNotifierProvider(create: (_) => Step1Provider()),
-            ChangeNotifierProvider(create: (_) => MedicalProvider()),
-            // ChangeNotifierProvider(create: (_) => FAQScreen()),
-            ChangeNotifierProvider(create: (_) => NotificatioProvider()),
-          ],
-          child: MaterialApp(
-            debugShowCheckedModeBanner: false,
-            darkTheme: ThemeData.dark(),
-            themeMode: currentMode,
-            home: const WelcomeScreen(),
-          ),
-        );
-      },
+    // return ValueListenableBuilder<ThemeMode>(
+    //   valueListenable: themeNotifier,
+    //   builder: (_, ThemeMode currentMode, __) {
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => HomeScreenProvider()),
+        ChangeNotifierProvider(create: (_) => ListFutureScreen()),
+        ChangeNotifierProvider(create: (_) => PastAppoint()),
+        ChangeNotifierProvider(create: (_) => Step1Provider()),
+        ChangeNotifierProvider(create: (_) => MedicalProvider()),
+        // ChangeNotifierProvider(create: (_) => FAQScreen()),
+        ChangeNotifierProvider(create: (_) => NotificatioProvider()),
+        ChangeNotifierProvider(create: (_) => AboutUsProvider()),
+        ChangeNotifierProvider(create: (_) => MessageProvider()),
+      ],
+      child: GetMaterialApp(
+        debugShowCheckedModeBanner: false,
+        darkTheme: ThemeData.dark(),
+        themeMode: ThemeMode.system,
+        home: const WelcomeScreen(),
+      ),
     );
   }
 }
+//     );
+//   }
+// }
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});

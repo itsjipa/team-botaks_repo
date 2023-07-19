@@ -108,6 +108,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         ),
                         prefixIcon: const Icon(Icons.email),
                         labelText: 'Email',
+                        hintText: 'jondoe@gmail.com',
                         labelStyle: GoogleFonts.lexendDeca()),
                     validator: (value) {
                       if (value == null || value.isEmpty) {

@@ -1,12 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:kelompokmbl/const.dart';
+import 'package:kelompokmbl/provider/messageprov.dart';
+import 'package:kelompokmbl/screen/chatscreen.dart';
+import 'package:provider/provider.dart';
 
-class MessagesScreen extends StatelessWidget {
-  const MessagesScreen({super.key});
+class MessageScreen extends StatefulWidget {
+  const MessageScreen({super.key});
 
   @override
+  State<MessageScreen> createState() => _MessageScreenState();
+}
+
+class _MessageScreenState extends State<MessageScreen> {
+  @override
   Widget build(BuildContext context) {
+    final prov = Provider.of<MessageProvider>(context);
     return SingleChildScrollView(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -155,40 +164,87 @@ class MessagesScreen extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(
-            height: 10,
-          ),
-          MessagesMenu(
-            images0: images,
-            title: "Drg. Jessie Ramsley",
-            subttle: "Will you come to clinic at 7 pm ?",
-            clock: "10.00",
-          ),
-          MessagesMenu(
-              images0: images1,
-              title: "Drg. Thalia Smith",
-              subttle: "You can't eat spicy food right now",
-              clock: "12.30"),
-          MessagesMenu(
-              images0: images2,
-              title: "Drg. Zoe Adam",
-              subttle: "Hello, If you have complaint you can ask me",
-              clock: "01/01/2023"),
-          MessagesMenu(
-              images0: images3,
-              title: "Drg. Josh Alexander",
-              subttle: "Hello, If you have complaint you can ask me",
-              clock: "01/01/2023"),
-          MessagesMenu(
-              images0: images4,
-              title: "Drg. Xavierra Ailen",
-              subttle: "Hello, If you have complaint you can ask me",
-              clock: "01/01/2023"),
-          MessagesMenu(
-              images0: images5,
-              title: "Drg. Zein Aldebaran",
-              subttle: "Hahaha, whatever",
-              clock: "09.00"),
+          // SizedBox(
+          //   height: 10,
+          // ),
+          // MessagesMenu(
+          //   images0: images,
+          //   title: "Drg. Jessie Ramsley",
+          //   subttle: "Will you come to clinic at 7 pm ?",
+          //   clock: "10.00",
+          // ),
+          // MessagesMenu(
+          //     images0: images1,
+          //     title: "Drg. Thalia Smith",
+          //     subttle: "You can't eat spicy food right now",
+          //     clock: "12.30"),
+          // MessagesMenu(
+          //     images0: images2,
+          //     title: "Drg. Zoe Adam",
+          //     subttle: "Hello, If you have complaint you can ask me",
+          //     clock: "01/01/2023"),
+          // MessagesMenu(
+          //     images0: images3,
+          //     title: "Drg. Josh Alexander",
+          //     subttle: "Hello, If you have complaint you can ask me",
+          //     clock: "01/01/2023"),
+          // MessagesMenu(
+          //     images0: images4,
+          //     title: "Drg. Xavierra Ailen",
+          //     subttle: "Hello, If you have complaint you can ask me",
+          //     clock: "01/01/2023"),
+          // MessagesMenu(
+          //     images0: images5,
+          //     title: "Drg. Zein Aldebaran",
+          //     subttle: "Hahaha, whatever",
+          //     clock: "09.00"),
+          ListView.builder(
+              physics: NeverScrollableScrollPhysics(),
+              itemCount: prov.chat['data']!.length,
+              shrinkWrap: true,
+              itemBuilder: (context, index) {
+                var item = prov.chat['data']![index];
+                return Padding(
+                  padding: EdgeInsets.symmetric(
+                    vertical: 5,
+                  ),
+                  child: ListTile(
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => ChatScreen()));
+                    },
+                    leading: CircleAvatar(
+                      radius: 30,
+                      backgroundImage: ExactAssetImage(
+                        item['img'].toString(),
+                      ),
+                    ),
+                    title: Text(
+                      item['doctor'].toString(),
+                      style: GoogleFonts.quicksand(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 17,
+                      ),
+                    ),
+                    subtitle: Text(
+                      item['text'].toString(),
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: GoogleFonts.montserrat(
+                        fontSize: 15,
+                        color: Colors.black45,
+                      ),
+                    ),
+                    trailing: Text(
+                      item['time'].toString(),
+                      style: GoogleFonts.montserrat(
+                        fontSize: 12,
+                        color: Colors.black45,
+                      ),
+                    ),
+                  ),
+                );
+              })
         ],
       ),
     );
@@ -246,7 +302,6 @@ class MessagesMenu extends StatelessWidget {
             color: Colors.black45,
           ),
         ),
-
       ),
     );
   }
