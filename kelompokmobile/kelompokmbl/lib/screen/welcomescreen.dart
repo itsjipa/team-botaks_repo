@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:kelompokmbl/screen/loginscreen.dart';
 import 'package:kelompokmbl/screen/navbarscreen.dart';
+import 'package:kelompokmbl/screen/registerscreen.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
@@ -147,7 +148,10 @@ class WelcomeScreen extends StatelessWidget {
                         borderRadius: BorderRadius.circular(10),
                       ),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => const RegisterScreen()));
+                    },
                     child: Text(
                       'Sign Up',
                       style: GoogleFonts.roboto(
