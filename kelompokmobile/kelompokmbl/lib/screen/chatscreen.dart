@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:kelompokmbl/const.dart';
 import 'package:kelompokmbl/screen/samplechat.dart';
@@ -37,7 +38,7 @@ class _ChatScreenState extends State<ChatScreen> {
                     style: GoogleFonts.roboto(
                         color: Colors.white,
                         fontWeight: FontWeight.w600,
-                        fontSize: 18),
+                        fontSize: 15),
                   ),
                 ),
               ],
@@ -47,12 +48,17 @@ class _ChatScreenState extends State<ChatScreen> {
             Padding(
               padding: EdgeInsets.only(
                 top: 8,
-                right: 20,
+                right: 5,
               ),
-              child: Icon(
-                MdiIcons.phone,
-                color: Colors.white,
-                size: 26,
+              child: IconButton(
+                onPressed: () async {
+                  await FlutterPhoneDirectCaller.callNumber('+21(923-456)');
+                },
+                icon: Icon(
+                  MdiIcons.phone,
+                  color: Colors.white,
+                  size: 26,
+                ),
               ),
             ),
             Padding(
@@ -60,10 +66,13 @@ class _ChatScreenState extends State<ChatScreen> {
                 top: 8,
                 right: 20,
               ),
-              child: Icon(
-                MdiIcons.videoOutline,
-                color: Colors.white,
-                size: 26,
+              child: IconButton(
+                onPressed: () {},
+                icon: Icon(
+                  MdiIcons.videoOutline,
+                  color: Colors.white,
+                  size: 26,
+                ),
               ),
             ),
             Padding(

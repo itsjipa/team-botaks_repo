@@ -123,77 +123,78 @@ class _AboutUsScreenState extends State<AboutUsScreen> {
                     itemBuilder: (context, index) {
                       var item = prov.data['data']![index];
                       return Container(
-                          margin: EdgeInsets.symmetric(
-                            horizontal: 15,
-                          ),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Container(
-                                decoration: BoxDecoration(
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: Colors.black12,
-                                      blurRadius: 6,
-                                      spreadRadius: 4,
-                                    ),
-                                  ],
-                                ),
-                                height: 180,
-                                width: 180,
-                                child: Image.asset(
-                                  item['img'].toString(),
-                                  fit: BoxFit.cover,
+                        margin: EdgeInsets.symmetric(
+                          horizontal: 15,
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Container(
+                              decoration: BoxDecoration(
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.black12,
+                                    blurRadius: 6,
+                                    spreadRadius: 4,
+                                  ),
+                                ],
+                              ),
+                              height: 180,
+                              width: 180,
+                              child: Image.asset(
+                                item['img'].toString(),
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                            Container(
+                              height: 100,
+                              width: 180,
+                              decoration: BoxDecoration(
+                                color: Colors.grey.shade300,
+                                shape: BoxShape.rectangle,
+                                borderRadius: BorderRadius.only(
+                                  bottomLeft: Radius.circular(10),
+                                  bottomRight: Radius.circular(10),
                                 ),
                               ),
-                              Container(
-                                height: 100,
-                                width: 180,
-                                decoration: BoxDecoration(
-                                  color: Colors.grey.shade300,
-                                  shape: BoxShape.rectangle,
-                                  borderRadius: BorderRadius.only(
-                                    bottomLeft: Radius.circular(10),
-                                    bottomRight: Radius.circular(10),
+                              // color: Colors.black,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Container(
+                                    margin: EdgeInsets.only(
+                                      left: 10.0,
+                                      top: 10.0,
+                                    ),
+                                    child: Text(
+                                      "Nim    :  ${item['nim'].toString()}",
+                                      style: GoogleFonts.quicksand(
+                                          color: Colors.black,
+                                          fontSize: 15,
+                                          fontWeight: FontWeight.w600),
+                                    ),
                                   ),
-                                ),
-                                // color: Colors.black,
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Container(
-                                      margin: EdgeInsets.only(
-                                        left: 10.0,
-                                        top: 10.0,
-                                      ),
-                                      child: Text(
-                                        "Nim    :  ${item['nim'].toString()}",
-                                        style: GoogleFonts.quicksand(
-                                            color: Colors.black,
-                                            fontSize: 15,
-                                            fontWeight: FontWeight.w600),
-                                      ),
+                                  SizedBox(
+                                    height: 6,
+                                  ),
+                                  Container(
+                                    margin: EdgeInsets.only(
+                                      left: 10.0,
                                     ),
-                                    SizedBox(
-                                      height: 6,
+                                    child: Text(
+                                      "Nama :  ${item['name'].toString()}",
+                                      style: GoogleFonts.quicksand(
+                                          color: Colors.black,
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.w600),
                                     ),
-                                    Container(
-                                      margin: EdgeInsets.only(
-                                        left: 10.0,
-                                      ),
-                                      child: Text(
-                                        "Nama :  ${item['name'].toString()}",
-                                        style: GoogleFonts.quicksand(
-                                            color: Colors.black,
-                                            fontSize: 14,
-                                            fontWeight: FontWeight.w600),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              )
-                            ],
-                          ));
+                                  ),
+                                ],
+                              ),
+                            )
+                          ],
+                        ),
+                      );
                     }),
               ),
             ],

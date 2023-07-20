@@ -46,6 +46,7 @@ dependencies:
   firebase_auth: ^4.6.3
   get: ^4.6.5
   custom_clippers: ^2.0.0
+  flutter_phone_direct_caller: ^2.1.1
   
 
 dev_dependencies:
