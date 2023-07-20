@@ -16,24 +16,24 @@ class WelcomeScreen extends StatelessWidget {
         padding: EdgeInsets.all(15.0),
         child: Column(
           children: [
+            // SizedBox(
+            //   height: 15,
+            // ),
+            // Align(
+            //   alignment: Alignment.centerRight,
+            //   child: TextButton(
+            //     onPressed: () {
+            //       Navigator.push(context,
+            //           MaterialPageRoute(builder: (context) => NavbarScreen()));
+            //     },
+            //     child: Text(
+            //       'SKIP',
+            //       style: TextStyle(color: Color(0xFFFF9800), fontSize: 20),
+            //     ),
+            //   ),
+            // ),
             SizedBox(
-              height: 15,
-            ),
-            Align(
-              alignment: Alignment.centerRight,
-              child: TextButton(
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => NavbarScreen()));
-                },
-                child: Text(
-                  'SKIP',
-                  style: TextStyle(color: Color(0xFFFF9800), fontSize: 20),
-                ),
-              ),
-            ),
-            SizedBox(
-              height: 50,
+              height: 75,
             ),
             Padding(
               padding: EdgeInsets.all(20),
